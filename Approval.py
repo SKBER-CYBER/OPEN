@@ -1,14 +1,10 @@
 # OWNER BY SCRIPT : MR OGGY
 # GITHUB LINK : SKBER-CYBER
 # MACK BY : MUHAMMAD JAKARIYA HASAN
-
 import os, uuid, base64, requests, zlib, time, subprocess
 from datetime import datetime
-
 ID_FILE = '/data/data/com.termux/files/usr/bin/.oggy-lock'
-
 def clear(): os.system('clear')
-
 def banner():
     clear()
     print("\033[1;92m")
@@ -18,21 +14,17 @@ def banner():
     print("║        \033[1;93mFB CLONING TOOL SYSTEM      \033[1;92m║")
     print("╚════════════════════════════════════╝")
     print("\033[0m")
-
 try:
     key_local = open(ID_FILE, 'r').read()
 except:
     key_local = uuid.uuid4().hex[:5].upper()
     open(ID_FILE, 'w').write(key_local)
-
 uid = os.getuid()
 raw_key = f"OGGY-LOCK-{uid}XX{key_local}2025=="
 encoded_key = base64.b64encode(raw_key.encode()).decode()
 compressed_url = b'x\x9c\xcb())(\xb6\xd2\xd7/J,\xd7K\xcf,\xc9(M*-N-J\xce\xcf+I\xcd+\xd1K\xce\xcf\xd5\x0f\xf6vr\r\xd2u\x8e\x04\x92\xfa\xde\xc1!\xfa\xb9\x89\x99y \x86^IE\t\x00\xcbC\x15\xda'
 approval_link = zlib.decompress(compressed_url).decode()
-
 def line(): print("\033[1;92m═══════════════════════════════════════\033[0m")
-
 def approve_check():
     banner()
     print("\033[1;92mChecking your key...\033[0m")
@@ -48,7 +40,6 @@ def approve_check():
                 for part in parts:
                     if part.startswith('JOIN:'): join_date = part.replace('JOIN:', '')
                     if part.startswith('EXPIRE:'): expire_date = part.replace('EXPIRE:', '')
-
                 today = datetime.today().date()
                 expire_obj = datetime.strptime(expire_date, '%Y-%m-%d').date()
                 if today > expire_obj:
