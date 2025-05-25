@@ -1,4 +1,5 @@
-
+# GITHUB LINK : SKBER-CYBER
+# DECODE BY : MUHAMMAD JAKARIYA HASAN
 import requests
 import bs4
 import json
