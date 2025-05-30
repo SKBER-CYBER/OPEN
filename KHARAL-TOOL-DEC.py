@@ -1,4 +1,5 @@
-#KHARAL-TOOL.py
+# GITHUB LINK : SKBER-CYBER
+# DECODE BY : MUHAMMAD JAKARIYA HASAN
 import os
 import requests
 import time
